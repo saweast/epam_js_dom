@@ -1,14 +1,18 @@
 /**
  * Created by Tea on 7/31/2016.
  */
+"use strict";
 window.onload = function () {
     let productType = document.getElementsByClassName('pType')[0],
         productTypeValue,
-        newPhone = document.getElementById('newPhone');
+        local = 0,
+        newPhone = document.getElementById('newPhone'),
+        button = document.getElementById('submitButton'),
+        result = document.getElementById('bill');
+
 
     newPhone.addEventListener('click', function() {
         let parent = document.getElementsByClassName('orderPhones')[0],
-            local = 0,
             label = document.createElement('label'),
             input = document.createElement('input'),
             textNode = document.createTextNode('Phone number: ');
@@ -37,4 +41,26 @@ window.onload = function () {
             productTypeValue = 1;
         }
     });
+
+    button.addEventListener('click', function(e) {
+        e.preventDefault();
+        let price = document.getElementById('price').value,
+            number = document.getElementById('number').value;
+        if (!productTypeValue) {
+            let name = document.getElementById('productNameStandart').value,
+                file = document.getElementById('productFileStandart').value;
+            //call fucntion
+        } else {
+            let name = document.getElementById('productNameExclusive').value,
+                file = document.getElementById('productFileExclusive').value,
+                formFactor = document.getElementById('productFormFactorExclusive').options[document.getElementById('productFormFactorExclusive').selectedIndex].innerHTML,
+                workFlow = document.getElementById('productWorkFlowExclusive').options[document.getElementById('productWorkFlowExclusive').selectedIndex].innerHTML,
+                diameter = document.getElementById('productDiameterExclusive').value,
+                matherial = document.getElementById('productMatherialExclusive').options[document.getElementById('productMatherialExclusive').selectedIndex].innerHTML,
+                mountingBracket = document.getElementById('productMountingBracketExclusive').value,
+                length = document.getElementById('productLengthExclusive').value;
+        //    call fucniton
+        }
+    })
 }
+

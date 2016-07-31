@@ -7,75 +7,88 @@
     <script src="main.js"></script>
 </head>
 <body>
-<div class="casual">
-    <label for="orderNumber">Order number: <input type="text" id="orderNumber" name="orderNumber"></label>
-    <label for="orderDate">Order date: <input type="date" id="orderDate" name="orderDate"></label>
-    <div class="orderPhones">
-        <button id="newPhone">+</button>
-        <label for="orderPhone">Phone number: <input type="text" name="orderPhone" id="orderPhone"></label>
+<form action="">
+    <div class="casual">
+        <label for="orderNumber">Order number: <input type="text" id="orderNumber" name="orderNumber"></label>
+        <label for="orderDate">Order date: <input type="date" id="orderDate" name="orderDate"></label>
+        <div class="orderPhones">
+            <button id="newPhone" onclick="return false;">+</button>
+            <label for="orderPhone">Phone number: <input type="text" name="orderPhone" id="orderPhone"></label>
 
+        </div>
+        <label for="orderName">Full name: <input type="text" id="orderName" name="orderName"></label>
     </div>
-    <label for="orderName">Full name: <input type="text" id="orderName" name="orderName"></label>
-</div>
-<div class="delivery">
-    <label for="receiverPhone">Receiver phone: <input type="text" id="receiverPhone" name="receiverPhone"></label>
-    <label for="deliveryType">Delivery type:
-        <select name="deliveryType" id="deliveryType">
-            <option>Nova poshta</option>
-            <option selected>Mist Express</option>
-            <option>Bla bla</option>
-        </select>
-    </label>
-    <label for="receiverCity">Receiver city: <input type="text" id="receiverCity" name="receiverCity"></label>
-    <label for="receiverDate">Receiver date: <input type="date" id="receiverDate" name="receiverDate"></label>
-</div>
-<div class="product">
-    <div class="pType">Choose product type:
-        <label for="standart"><input type="radio" name="productType" id="standart" checked>Standart</label>
-        <label for="exclusive"><input type="radio" name="productType" id="exclusive">Exclusive</label>
+    <div class="delivery">
+        <label for="receiverPhone">Receiver phone: <input type="text" id="receiverPhone" name="receiverPhone"></label>
+        <label for="deliveryType">Delivery type:
+            <select name="deliveryType" id="deliveryType">
+                <option>Nova poshta</option>
+                <option selected>Mist Express</option>
+                <option>Bla bla</option>
+            </select>
+        </label>
+        <label for="receiverCity">Receiver city: <input type="text" id="receiverCity" name="receiverCity"></label>
+        <label for="receiverDate">Receiver date: <input type="date" id="receiverDate" name="receiverDate"></label>
     </div>
-    <div class="standart">
+    <div class="product">
         <h2>Product</h2>
-        <label for="productNameStandart">Name: <input type="text" id="productNameStandart" name="productNameStandart"></label>
-        <label for="productFileStandart">Product image: <input type="file" id="productFileStandart" name="productFileStandart"></label>
+        <div class="pType">Choose product type:
+            <label for="standart"><input type="radio" name="productType" id="standart" checked>Standart</label>
+            <label for="exclusive"><input type="radio" name="productType" id="exclusive">Exclusive</label>
+        </div>
+        <div class="standart">
+            <label for="productNameStandart">Name: <input required type="text" id="productNameStandart"
+                                                          name="productNameStandart"></label>
+            <label for="productFileStandart">Image: <input required type="file" id="productFileStandart"
+                                                           name="productFileStandart"></label>
+        </div>
+        <div class="exclusive" style="display: none;">
+            <label for="productNameExclusive">Name: <input required type="text" id="productNameExclusive"
+                                                           name="productNameExclusive"></label>
+            <label for="productFileExclusive">Image: <input required type="file" id="productFileExclusive"
+                                                            name="productFileExclusive"></label>
+            <label for="productFormFactorExclusive">Form factor:
+                <select name="productFormFactorExclusive" id="productFormFactorExclusive">
+                    <option selected>Direct</option>
+                    <option>L-shaped</option>
+                    <option>Cartridge</option>
+                    <option>Ribbed</option>
+                    <option>Other</option>
+                </select>
+            </label>
+            <label for="productWorkFlowExclusive">Work flow:
+                <select name="productWorkFlowExclusive" id="productWorkFlowExclusive">
+                    <option selected>Air</option>
+                    <option>Water</option>
+                    <option>Metal</option>
+                </select>
+            </label>
+            <label for="productDiameterExclusive">Diameter: <input type="number" id="productDiameterExclusive"
+                                                                   name="productDiameterExclusive"></label>
+            <label for="productMatherialExclusive">Matherial:
+                <select name="productMatherialExclusive" id="productMatherialExclusive">
+                    <option selected>Black</option>
+                    <option>Stainless steel</option>
+                    <option>12X18H10T</option>
+                </select>
+            </label>
+            <label for="productMountingBracketExclusive">Mounting bracket:</label>
+            <textarea name="productMountingBracketExclusive" id="productMountingBracketExclusive" cols="30"
+                      rows="10"></textarea>
+            <label for="productLengthExclusive">Length flexible conclusions: <input type="number"
+                                                                                    id="productLengthExclusive"
+                                                                                    name="productLengthExclusive"></label>
+        </div>
+        <label for="price" style="margin-top: 20px;">Price:
+            <input type="number" id="price" name="price" required>
+        </label>
+        <label for="number">Number:
+            <input type="number" id="number" name="number" required>
+        </label>
+        <button id="submitButton">Submit</button>
+
     </div>
-    <div class="exclusive" style="display: none;">
-        <h2>Product</h2>
-        <label for="productNameExclusive">Name: <input type="text" id="productNameExclusive" name="productNameExclusive"></label>
-        <label for="productFileExclusive">Image: <input type="file" id="productFileExclusive" name="productFileExclusive"></label>
-        <label for="productFormFactorExclusive">Form factor:
-            <select name="productFormFactorExclusive" id="productFormFactorExclusive">
-                <option selected>Direct</option>
-                <option>L-shaped</option>
-                <option>Cartridge</option>
-                <option>Ribbed</option>
-                <option>Other</option>
-            </select>
-        </label>
-        <label for="productWorkFlowExclusive">Work flow:
-            <select name="productWorkFlowExclusive" id="productWorkFlowExclusive">
-                <option selected>Air</option>
-                <option>Water</option>
-                <option>Metal</option>
-            </select>
-        </label>
-        <label for="productDiameterExclusive">Diameter: <input type="number" id="productDiameterExclusive" name="productDiameterExclusive"></label>
-        <label for="productMatherialExclusive">Matherial:
-            <select name="productMatherialExclusive" id="productMatherialExclusive">
-                <option selected>Black</option>
-                <option>Stainless steel</option>
-                <option>12X18H10T</option>
-            </select>
-        </label>
-        <label for="productMountingBracketExclusive">Mounting bracket:
-
-        </label>
-        <textarea name="productMountingBracketExclusive" id="productMountingBracketExclusive" cols="30" rows="10"></textarea>
-        <label for="productLengthExclusive">Length flexible conclusions: <input type="number" id="productLengthExclusive" name="productLengthExclusive"></label>
-
-    </div>
-
-</div>
-
+</form>
+<div class="bill"></div>
 </body>
 </html>
