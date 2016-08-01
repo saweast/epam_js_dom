@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="main.css">
+    <script>
+        function calc(obj, price) {
+            let newPrice = ((obj.value*price) <= 1000)? (obj.value*price) : (obj.value*price*0.93),
+                parentDiv = obj.parentNode.parentNode,
+                p = parentDiv.getElementsByTagName('p')[0];
+            p.innerHTML = 'Price is: '+newPrice+' $';
+        }
+    </script>
     <script src="main.js"></script>
 </head>
 <body>
@@ -14,7 +22,6 @@
         <div class="orderPhones">
             <button id="newPhone" onclick="return false;">+</button>
             <label for="orderPhone">Phone number: <input type="text" name="orderPhone" id="orderPhone"></label>
-
         </div>
         <label for="orderName">Full name: <input type="text" id="orderName" name="orderName"></label>
     </div>
@@ -89,6 +96,6 @@
 
     </div>
 </form>
-<div class="bill"></div>
+<div id="bill"></div>
 </body>
 </html>

@@ -1,3 +1,7 @@
 label {
     display: block;
 }
+#bill div {
+    margin: 20px;
+    background: rgba(196, 196, 196, 0.53);
+}
